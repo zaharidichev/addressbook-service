@@ -2,9 +2,9 @@
 
 This is an example of a REST style service written in Scala which can answer three questions:
 
-- How many males are in the address book? - 3
-- Who is the oldest person in the address book - Wes
-- How many days older is Bill than Paul - 2862
+- How many males are in the address book? - __3__
+- Who is the oldest person in the address book - __Wes__
+- How many days older is Bill than Paul - __2862__
 
 # Running
 - sbt test (runs unit tests)
