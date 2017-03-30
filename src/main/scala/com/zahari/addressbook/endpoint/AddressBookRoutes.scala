@@ -1,6 +1,6 @@
 package com.zahari.addressbook.endpoint
 
-import com.zahari.addressbook.service.{AddressBookService, AddressBookServiceComponent}
+import com.zahari.addressbook.service.{AddressBookService}
 import akka.http.scaladsl.server.Directives._
 import com.zahari.addressbook.domain.Response
 
