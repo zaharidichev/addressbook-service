@@ -10,6 +10,9 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import com.zahari.addressbook.repo.FileBasedPeopleRepository
 
 /**
+  * This class wires all the default implementations together
+  * and binds the routes to the HTTP server.
+  *
   * Created by zahari on 30/03/2017.
   */
 object AddressBookServiceApp extends App with AddressBookRoutes with AddressBookServiceComponent with FileBasedPeopleRepository {

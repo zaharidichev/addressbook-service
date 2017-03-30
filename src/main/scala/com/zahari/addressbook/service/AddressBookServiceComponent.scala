@@ -6,6 +6,9 @@ import com.zahari.addressbook.repo.PeopleRepository
 import org.joda.time.Days
 
 /**
+  *
+  * Default implementation of the AdressBookService
+  *
   * Created by zahari on 31/03/2017.
   */
 trait AddressBookServiceComponent { repo: PeopleRepository =>

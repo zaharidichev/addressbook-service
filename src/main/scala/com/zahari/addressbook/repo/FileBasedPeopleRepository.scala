@@ -5,6 +5,9 @@ import com.github.nscala_time.time.Imports._
 import com.zahari.addressbook.domain.{Female, Male, Person, Undetermined}
 
 /**
+  *
+  * Repository which reads the content from a file on disk
+  *
   * Created by zahari on 31/03/2017.
   */
 trait FileBasedPeopleRepository extends PeopleRepository {
