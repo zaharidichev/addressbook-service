@@ -48,8 +48,8 @@ Test have been written with mocked people data and can be run through SBT. The s
 ```
 
 
-# Deployment
-Dependency injection has been provided via the standard Cake pattern in Scala. This allows us to very easily swap out repository implementations in order to do service level tests with mock data
+# Dependency injection
+DI has been provided via the standard Cake pattern in Scala. This allows us to very easily swap out repository implementations in order to do service level tests with mock data
 
 # Deployment
 Currently there is a live instance of the service running on the cloud. You can see the current price levels by doing a GET on:
