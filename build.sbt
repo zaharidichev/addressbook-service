@@ -14,3 +14,14 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-api" % "1.7.5",
   "org.slf4j" % "slf4j-simple" % "1.7.5"
 )
+
+val meta = """META.INF(.)*""".r
+
+assemblyMergeStrategy in assembly := {
+  case "application.conf" => MergeStrategy.concat
+  case "META-INF/MANIFEST.MF" => MergeStrategy.discard
+  case "reference.conf" => MergeStrategy.concat
+  case meta(_) => MergeStrategy.first
+  case _ => MergeStrategy.first
+}
+assemblyJarName in assembly := "app.jar"

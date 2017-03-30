@@ -1,0 +1,28 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  services:
+    - docker
+  environment:
+    SBT_VERSION: 0.13.11
+    SBT_OPTS: "-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled"
+dependencies:
+  pre:
+    - wget --output-document=$HOME/bin/sbt-launch.jar
+      https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/"$SBT_VERSION"/sbt-launch.jar
+    - echo "java $SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\""
+      > $HOME/bin/sbt
+    - chmod u+x $HOME/bin/sbt
+    - which sbt
+    - sbt sbt-version
+
+general:
+  branches:
+    only:
+     - master
+test:
+  override:
+    - sbt assembly
+    - docker build --no-cache=true -t $DOCKER_USER"/addressbook-service" .
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD -e $DOCKER_EMAIL
+    - docker push $DOCKER_USER"/addressbook-service" | cat
