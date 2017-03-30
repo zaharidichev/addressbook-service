@@ -21,7 +21,7 @@ trait AddressBookServiceComponent { repo: PeopleRepository =>
       for {
         person1 <- nameToPerson.get(n1)
         person2 <- nameToPerson.get(n2)
-      } yield Days.daysBetween(person1.dateOfBirth, person2.dateOfBirth).getDays
+      } yield Math.abs(Days.daysBetween(person1.dateOfBirth, person2.dateOfBirth).getDays)
 
     }
   }
