@@ -1,6 +1,7 @@
 package com.zahari.addressbook
 
-import com.zahari.addressbook.service.{AddressBookServiceComponent, PeopleRepository}
+import com.zahari.addressbook.repo.PeopleRepository
+import com.zahari.addressbook.service.AddressBookServiceComponent
 import org.scalatest.FlatSpec
 
 /**

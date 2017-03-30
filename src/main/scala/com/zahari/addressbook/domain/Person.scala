@@ -8,5 +8,6 @@ import com.github.nscala_time.time.Imports._
 sealed trait Gender
 case object Male extends Gender
 case object Female extends Gender
+case object Undetermined extends Gender
 
 case class Person(firstName: String, lastName: String, gender: Gender, dateOfBirth: LocalDate)

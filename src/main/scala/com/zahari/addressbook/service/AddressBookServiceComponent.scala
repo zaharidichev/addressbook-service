@@ -2,6 +2,7 @@ package com.zahari.addressbook.service
 import scala.util.Try
 import com.github.nscala_time.time.Imports._
 import com.zahari.addressbook.domain.{Male, Person}
+import com.zahari.addressbook.repo.PeopleRepository
 import org.joda.time.Days
 
 /**

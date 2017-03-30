@@ -1,4 +1,4 @@
-package com.zahari.addressbook.service
+package com.zahari.addressbook.repo
 
 import com.zahari.addressbook.domain.Person
 

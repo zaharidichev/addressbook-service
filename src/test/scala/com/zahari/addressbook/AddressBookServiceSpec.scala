@@ -2,7 +2,8 @@ package com.zahari.addressbook
 
 import com.github.nscala_time.time.Imports.LocalDate
 import com.zahari.addressbook.domain.{Female, Male, Person}
-import com.zahari.addressbook.service.{AddressBookServiceComponent, PeopleRepository}
+import com.zahari.addressbook.repo.PeopleRepository
+import com.zahari.addressbook.service.AddressBookServiceComponent
 import org.scalatest.FlatSpec
 
 /**
