@@ -7,6 +7,6 @@ import com.zahari.addressbook.domain.Person
   */
 trait AddressBookService {
   def numberOfMales: Int
-  def oldestPerson: Person
-  def ageDifferenceInDays(n1: String, n2: String): Int
+  def oldestPerson: Option[Person]
+  def ageDifferenceInDays(n1: String, n2: String): Option[Int]
 }

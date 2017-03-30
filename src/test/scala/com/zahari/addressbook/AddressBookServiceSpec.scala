@@ -23,19 +23,19 @@ class AddressBookServiceSpec extends FlatSpec {
   }
 
   "oldestPerson" should "be John Fox" in {
-    val oldest = serviceWithMockedRepo.oldestPerson
+    val oldest = serviceWithMockedRepo.oldestPerson.get
     assert(oldest.firstName == "John")
     assert(oldest.lastName == "Fox")
   }
 
   "age difference between John and Gloria" should "be 2  days" in {
-    assert(serviceWithMockedRepo.ageDifferenceInDays("John", "Gloria") == 2)
+    assert(serviceWithMockedRepo.ageDifferenceInDays("John", "Gloria").get == 2)
 
   }
 
   // irrespective or order
   "age difference between Gloria and John" should "be 2 days" in {
-    assert(serviceWithMockedRepo.ageDifferenceInDays("Gloria", "John") == 2)
+    assert(serviceWithMockedRepo.ageDifferenceInDays("Gloria", "John").get == 2)
   }
 
 }
